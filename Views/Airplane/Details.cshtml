@@ -1,0 +1,44 @@
+﻿@model flightbooking_project.Models.AirplaneInfo
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Admin_Layout1.cshtml";
+}
+<div class="content-wrapper">
+    <h2>جزئیات</h2>
+
+    <div>
+        <h4>هواپیماها</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.AirplaneName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AirplaneName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SeatingCapacity)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SeatingCapacity)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("ویرایش", "Edit", new { id = Model.PlaneId }) |
+        @Html.ActionLink("بازگشت به لیست", "Index")
+    </p>
+    </div>

@@ -1,0 +1,75 @@
+﻿@model flightbooking_project.Models.TicketReservation
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TicketReservation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.plane_tbls.AirplaneName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.plane_tbls.AirplaneName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResFrom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResFrom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResTo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResTo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResDepDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResDepDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.planeSeat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.planeSeat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResTicketPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResTicketPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResPlaneType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResPlaneType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ResId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<flightbooking_project.Models.TicketReservation>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<center><h1>رزرو بلیط هواپیما</h1></center>
+@{ 
+    Html.BeginForm("Search", "FlightBook", "Index", FormMethod.Post);
+
+    <div dir="rtl" style="text-align:center">
+        <table align="center">
+            <tr>
+                <th>شهر مبدا</th>
+                <th>شهر مقصد</th>
+                <th>روز حرکت</th>
+            </tr>
+            <tr>
+                <td>
+
+                    <input type="text" name="cityfrom" class="city1" placeholder="شهر مبدا را وارد کنید" required="" list="rcity" />
+                </td>
+                <td>
+                    <input type="text" name="cityto" class="city2" placeholder="شهر مقصد را وارد کنید" required="" list="acity" />
+                </td>
+                <td>
+                    <input type="text" name="date1" class="date1" placeholder="روز حرکت" required="" list="date1" />
+                </td>
+
+            </tr>
+        </table>
+        <input type="submit" value="جستجوی پرواز" class="btn btn-block" style="align-items:center" />
+    </div>
+   
+    }

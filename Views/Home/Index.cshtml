@@ -1,0 +1,71 @@
+﻿@model IEnumerable<flightbooking_project.Models.TicketReservation>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<div class="row">
+    <div class="col-md-6">
+        <form as>
+            <input name="searchstring" class="form-control" type="search" placeholder="جستجو" aria-label="جستجو" />
+            <button type="submit">تایید</button>
+        </form>
+    </div>
+</div>
+
+<table class="table" dir="rtl">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.plane_tbls.AirplaneName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResFrom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResTo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResDepDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.planeSeat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResTicketPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResPlaneType)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.plane_tbls.AirplaneName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResFrom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResTo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResDepDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.planeSeat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResTicketPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResPlaneType)
+        </td>
+
+    </tr>
+}
+
+</table>

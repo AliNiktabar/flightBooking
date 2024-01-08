@@ -1,0 +1,48 @@
+﻿@model IEnumerable<flightbooking_project.Models.AirplaneInfo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin_Layout1.cshtml";
+}
+<div class="content-wrapper">
+    <h2>لیست هواپیماها</h2>
+
+    <p>
+        @Html.ActionLink("اضافه کردن", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AirplaneName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SeatingCapacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AirplaneName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SeatingCapacity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.ActionLink("ویرایش", "Edit", new { id = item.PlaneId }) |
+                    @Html.ActionLink("جزئیات", "Details", new { id = item.PlaneId }) |
+                    @Html.ActionLink("حذف", "Delete", new { id = item.PlaneId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

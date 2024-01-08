@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "SearchResult";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>نتایج جستجو</h2>
+
+<center>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>نام هواپیما</th>
+                <th>مبدا</th>
+                <th>مقصد</th>
+                <th>صندلی های باقی مانده</th>
+                <th>قیمت</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewBag.ss)
+            {
+                <tr>
+                    <td>
+                        @{ 
+                            int pi = int.Parse(@item.PlaneId.ToString());
+                            var dd = new flightbooking_project.Models.ContextCS();
+                            var Pname = dd.PlaneInfo.Where(a => a.PlaneId == pi).FirstOrDefault();
+                            @Pname.AirplaneName
+                        }
+                    </td>
+                    <td>@item.ResFrom</td>
+                    <td>@item.ResTo</td>
+                    <td>@item.planeSeat</td>
+                    <td>@item.ResTicketPrice</td>
+                </tr>    
+            }
+        </tbody>
+    </table>
+</center>
